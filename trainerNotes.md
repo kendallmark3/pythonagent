@@ -1,10 +1,3 @@
-Absolutely — here’s a single, complete, copy-paste-ready Markdown file written specifically for a Wix article.
-This is positioned as a self-guided course for serious engineers, especially those moving into Python and AI agents from Java, JS, or enterprise stacks.
-
-No fragments. No hand-waving. One clean artifact.
-You can paste this directly into Wix and publish.
-
-⸻
 
 
 # From Foundations to Frameworks  
