@@ -1,10 +1,4 @@
-Love it. This is exactly the right move.
-Day Zero is where you either invite people in or accidentally scare them off. We’ll make it calm, honest, and empowering — no hype, no gatekeeping.
 
-Below is a single, clean Markdown file you can copy-paste directly into Wix or GitHub.
-All links are full URLs so Wix will auto-detect them.
-
-⸻
 
 
 # Day Zero — Start Here (Before You Write Any “Real” Code)
