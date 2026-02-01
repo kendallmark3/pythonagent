@@ -55,7 +55,7 @@ def check_health(base_url: str = "http://localhost:8800") -> bool:
     try:
         response = requests.get(f"{base_url}/health")
         return response.status_code == 200
-    except:
+    except requests.exceptions.RequestException:
         return False
 
 

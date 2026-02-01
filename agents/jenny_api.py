@@ -49,7 +49,7 @@ def get_agent():
 
 @app.get("/")
 def root():
-    """Health check endpoint"""
+    """Service information endpoint"""
     return {
         "service": "Jenny Agent API",
         "status": "running",
