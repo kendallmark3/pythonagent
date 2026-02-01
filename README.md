@@ -1,4 +1,28 @@
 # pythonagent
+
+# Jenny Agent Sandbox
+
+This repo is a lightweight sandbox for building and experimenting with
+Python-based AI agents using GitHub Codespaces.
+
+## What this is
+- A starter agent ("Jenny")
+- A sandbox for prototyping
+- A teaching tool for new engineers
+
+## Getting Started
+
+1. Open this repo in GitHub
+2. Click Code → Codespaces → Create new Codespace
+3. Add OPENAI_API_KEY as a Codespaces Secret
+4. Run:
+
+```bash
+python agents/jenny.py
+```
+
+Talk to Jenny.
+
 Training Center for Python Agents
 
 Alright, this is a great moment to set the tone for your Python Agent Training Center. You’re right: agents are simpler than most enterprise systems you’ve built — the trick is knowing what to ignore.
