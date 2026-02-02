@@ -1,0 +1,314 @@
+
+
+# Python Cheat Sheet (Practical & Comprehensive)
+
+This cheat sheet covers **core Python patterns and conventions** used in real-world projects:
+- Classes & objects
+- Magic (dunder) methods
+- Naming conventions
+- Function signatures
+- Imports & project structure
+- Common gotchas
+
+---
+
+## 1. Basic File Structure
+
+```python
+#!/usr/bin/env python3
+"""
+module_name.py
+
+Short description of what this module does.
+"""
+
+import os
+import sys
+from typing import List, Dict, Optional
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
+
+
+⸻
+
+2. Naming Conventions (PEP 8)
+
+Variables
+
+user_name = "mark"
+total_count = 10
+is_active = True
+
+Constants
+
+MAX_RETRIES = 3
+DEFAULT_TIMEOUT = 30
+
+Functions
+
+def calculate_total(price: float, tax: float) -> float:
+    return price + tax
+
+Classes
+
+class UserAccount:
+    pass
+
+Private (by convention)
+
+_internal_value = 42
+
+
+⸻
+
+3. Functions & Signatures
+
+Basic Function
+
+def greet(name: str) -> str:
+    return f"Hello, {name}"
+
+Default Arguments
+
+def connect(host: str, port: int = 5432):
+    pass
+
+Keyword-Only Arguments
+
+def create_user(*, username: str, active: bool = True):
+    pass
+
+Variable Arguments
+
+def log(*args, **kwargs):
+    print(args, kwargs)
+
+
+⸻
+
+4. Classes & __init__
+
+Basic Class
+
+class Agent:
+    def __init__(self, name: str):
+        self.name = name
+
+Class with Defaults
+
+class Config:
+    def __init__(self, debug: bool = False):
+        self.debug = debug
+
+Type-Annotated Attributes
+
+class User:
+    def __init__(self, username: str, age: int):
+        self.username: str = username
+        self.age: int = age
+
+
+⸻
+
+5. Common Magic (Dunder) Methods
+
+Method	Purpose
+__init__	Constructor
+__str__	Human-readable string
+__repr__	Debug string
+__len__	Length
+__eq__	Equality
+__call__	Make object callable
+
+Example
+
+class Agent:
+    def __init__(self, name: str):
+        self.name = name
+
+    def __str__(self):
+        return f"Agent(name={self.name})"
+
+    def __call__(self, task: str):
+        return f"{self.name} executing {task}"
+
+
+⸻
+
+6. Class vs Static Methods
+
+Instance Method
+
+def run(self):
+    pass
+
+Class Method
+
+@classmethod
+def from_env(cls):
+    return cls()
+
+Static Method
+
+@staticmethod
+def validate(name: str) -> bool:
+    return len(name) > 0
+
+
+⸻
+
+7. Imports (Best Practices)
+
+Standard Library First
+
+import os
+import sys
+
+Third-Party
+
+import requests
+
+Local Imports
+
+from agents.base import BaseAgent
+
+Avoid
+
+from module import *
+
+
+⸻
+
+8. Project Structure (Recommended)
+
+pythonagent/
+├── agents/
+│   ├── __init__.py
+│   ├── base.py
+│   └── jenny.py
+├── core/
+│   ├── llm.py
+│   ├── memory.py
+│   └── tools.py
+├── config.py
+├── requirements.txt
+└── README.md
+
+
+⸻
+
+9. Environment Variables
+
+import os
+
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise RuntimeError("OPENAI_API_KEY not set")
+
+
+⸻
+
+10. Logging (Preferred Over Print)
+
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+logger.info("Agent started")
+logger.error("Something failed")
+
+
+⸻
+
+11. Exceptions
+
+try:
+    risky_operation()
+except ValueError as e:
+    logger.error(f"Invalid value: {e}")
+except Exception as e:
+    logger.exception("Unexpected error")
+
+
+⸻
+
+12. Data Classes (Clean & Powerful)
+
+from dataclasses import dataclass
+
+@dataclass
+class Message:
+    role: str
+    content: str
+
+
+⸻
+
+13. Typing Essentials
+
+from typing import List, Dict, Optional
+
+def process(items: List[str]) -> Optional[str]:
+    return items[0] if items else None
+
+
+⸻
+
+14. List / Dict Comprehensions
+
+squares = [x * x for x in range(10)]
+active_users = {u.id: u for u in users if u.active}
+
+
+⸻
+
+15. Common Python Gotchas
+
+❌ Mutable defaults
+
+def bad(items=[]):
+    pass
+
+✅ Correct
+
+def good(items=None):
+    if items is None:
+        items = []
+
+
+⸻
+
+16. Pythonic Principles
+	•	Explicit > implicit
+	•	Simple > clever
+	•	Readable > short
+	•	Small functions win
+	•	Objects model behavior, not just data
+
+⸻
+
+17. When in Doubt
+
+Ask:
+	•	Can someone read this in 6 months?
+	•	Can I test this?
+	•	Does this belong in a class?
+	•	Is this logic or orchestration?
+
+⸻
+
+Final Thought
+
+Python rewards clarity.
+Readable code scales better than clever code.
+Agents, services, scripts — they all benefit from the same fundamentals.
+
+Master these, and everything else is layering.
+
+---
+
