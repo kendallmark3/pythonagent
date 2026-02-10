@@ -1,5 +1,7 @@
 # pythonagent
 
+> **👉 New here? Start with [START_HERE.md](START_HERE.md) for a guided introduction to this learning course.**
+
 # Jenny Agent Sandbox
 
 This repo is a lightweight sandbox for building and experimenting with
